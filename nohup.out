@@ -1,0 +1,59 @@
+
+
+Welcome to Node-RED
+===================
+
+13 Jul 14:34:23 - [info] Node-RED version: v0.14.3
+13 Jul 14:34:23 - [info] Node.js  version: v4.2.6
+13 Jul 14:34:23 - [info] Linux 3.10.77 x64 LE
+13 Jul 14:34:23 - [info] Loading palette nodes
+13 Jul 14:34:30 - [warn] ------------------------------------------------------
+13 Jul 14:34:30 - [warn] [rpi-gpio] Info : Ignoring Raspberry Pi specific node
+13 Jul 14:34:30 - [warn] [serialport] Error: Could not locate the bindings file. Tried:
+ → /usr/local/lib/node_modules/node-red/node_modules/node-red-node-serialport/node_modules/serialport/build/serialport.node
+ → /usr/local/lib/node_modules/node-red/node_modules/node-red-node-serialport/node_modules/serialport/build/Debug/serialport.node
+ → /usr/local/lib/node_modules/node-red/node_modules/node-red-node-serialport/node_modules/serialport/build/Release/serialport.node
+ → /usr/local/lib/node_modules/node-red/node_modules/node-red-node-serialport/node_modules/serialport/out/Debug/serialport.node
+ → /usr/local/lib/node_modules/node-red/node_modules/node-red-node-serialport/node_modules/serialport/Debug/serialport.node
+ → /usr/local/lib/node_modules/node-red/node_modules/node-red-node-serialport/node_modules/serialport/out/Release/serialport.node
+ → /usr/local/lib/node_modules/node-red/node_modules/node-red-node-serialport/node_modules/serialport/Release/serialport.node
+ → /usr/local/lib/node_modules/node-red/node_modules/node-red-node-serialport/node_modules/serialport/build/default/serialport.node
+ → /usr/local/lib/node_modules/node-red/node_modules/node-red-node-serialport/node_modules/serialport/compiled/4.2.6/linux/x64/serialport.node
+13 Jul 14:34:30 - [warn] ------------------------------------------------------
+13 Jul 14:34:30 - [info] Settings file  : /var/services/homes/admin/.node-red/settings.js
+13 Jul 14:34:30 - [info] User directory : /var/services/homes/admin/.node-red
+13 Jul 14:34:30 - [info] Flows file     : /var/services/homes/admin/.node-red/flows_mikmak.json
+13 Jul 14:34:30 - [warn] Communication server error: Error: listen EADDRINUSE 0.0.0.0:1880
+13 Jul 14:34:30 - [error] Unable to listen on http://127.0.0.1:1880/
+13 Jul 14:34:30 - [error] Error: port in use
+
+
+Welcome to Node-RED
+===================
+
+13 Jul 14:45:16 - [info] Node-RED version: v0.14.3
+13 Jul 14:45:16 - [info] Node.js  version: v4.2.6
+13 Jul 14:45:16 - [info] Linux 3.10.77 x64 LE
+13 Jul 14:45:16 - [info] Loading palette nodes
+13 Jul 14:45:22 - [warn] ------------------------------------------------------
+13 Jul 14:45:22 - [warn] [rpi-gpio] Info : Ignoring Raspberry Pi specific node
+13 Jul 14:45:22 - [warn] [serialport] Error: Could not locate the bindings file. Tried:
+ → /usr/local/lib/node_modules/node-red/node_modules/node-red-node-serialport/node_modules/serialport/build/serialport.node
+ → /usr/local/lib/node_modules/node-red/node_modules/node-red-node-serialport/node_modules/serialport/build/Debug/serialport.node
+ → /usr/local/lib/node_modules/node-red/node_modules/node-red-node-serialport/node_modules/serialport/build/Release/serialport.node
+ → /usr/local/lib/node_modules/node-red/node_modules/node-red-node-serialport/node_modules/serialport/out/Debug/serialport.node
+ → /usr/local/lib/node_modules/node-red/node_modules/node-red-node-serialport/node_modules/serialport/Debug/serialport.node
+ → /usr/local/lib/node_modules/node-red/node_modules/node-red-node-serialport/node_modules/serialport/out/Release/serialport.node
+ → /usr/local/lib/node_modules/node-red/node_modules/node-red-node-serialport/node_modules/serialport/Release/serialport.node
+ → /usr/local/lib/node_modules/node-red/node_modules/node-red-node-serialport/node_modules/serialport/build/default/serialport.node
+ → /usr/local/lib/node_modules/node-red/node_modules/node-red-node-serialport/node_modules/serialport/compiled/4.2.6/linux/x64/serialport.node
+13 Jul 14:45:22 - [warn] ------------------------------------------------------
+13 Jul 14:45:22 - [info] Settings file  : /root/.node-red/settings.js
+13 Jul 14:45:22 - [info] User directory : /root/.node-red
+13 Jul 14:45:22 - [info] Flows file     : /root/.node-red/flows_mikmak.json
+13 Jul 14:45:22 - [info] Creating new flow file
+13 Jul 14:45:22 - [info] Starting flows
+13 Jul 14:45:22 - [info] Started flows
+13 Jul 14:45:22 - [warn] Communication server error: Error: listen EADDRINUSE 0.0.0.0:1880
+13 Jul 14:45:22 - [error] Unable to listen on http://127.0.0.1:1880/
+13 Jul 14:45:22 - [error] Error: port in use
