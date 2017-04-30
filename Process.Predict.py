@@ -5,15 +5,15 @@
 
 # ## Get and Prepare Weather Data from DataBase
 
-# In[2]:
+# In[1]:
 
 import pymysql.cursors
 import pandas as pd
 import numpy as np
 
-#pd.options.display.max_rows = 200
+pd.options.display.max_rows = 200
 #pd.set_option('display.float_format', lambda x: '%.20f' % x) #Display as Float
-#pd.set_option('display.float_format', lambda x: '{:,}'.format(x)) #Display as Scientific
+pd.set_option('display.float_format', lambda x: '{:,}'.format(x)) #Display as Scientific
 
 
 connection = pymysql.connect(host = "mikmak.cc", user="sensor", passwd="Gaffe2017", db="weatherDW")
@@ -28,10 +28,10 @@ connection.close()
 e_Log = (np.array(e_Log))
 
 
-# In[3]:
+# In[2]:
 
-#from IPython.core.interactiveshell import InteractiveShell
-#InteractiveShell.ast_node_interactivity = "all"
+from IPython.core.interactiveshell import InteractiveShell
+InteractiveShell.ast_node_interactivity = "all"
 
 t_Log = e_Log
 
@@ -53,7 +53,7 @@ t_Log.tail()
 
 # ### Order Data and Calculate Means and Sums
 
-# In[4]:
+# In[3]:
 
 X = pd.DataFrame()
 
@@ -83,10 +83,10 @@ X.transpose()
 
 # ### Prepare DataSet (Poly, Scale)
 
-# In[5]:
+# In[4]:
 
-#from IPython.core.interactiveshell import InteractiveShell
-#InteractiveShell.ast_node_interactivity = "all"
+from IPython.core.interactiveshell import InteractiveShell
+InteractiveShell.ast_node_interactivity = "all"
 
 from sklearn.preprocessing import PolynomialFeatures
 
@@ -96,7 +96,7 @@ X = poly.fit_transform(X).astype(int)
 
 from sklearn.externals import joblib
 X_min_max_scaler = joblib.load('data/X_min_max_scaler.pkl')
-X = X_min_max_scaler.transform(X[0])
+X = X_min_max_scaler.transform(X.reshape(1,-1))
 
 
 # ## Predict!
@@ -104,7 +104,7 @@ X = X_min_max_scaler.transform(X[0])
 # - 1 - is medium
 # - 2 - device should stay off
 
-# In[6]:
+# In[5]:
 
 #if result == 1:
 #    model_reg = joblib.load('data/linreg_med_5deg.pkl')
@@ -122,7 +122,7 @@ y_scaled = y / y_min_max_scaler.scale_ + y_min_max_scaler.min_
 y_scaled
 
 
-# In[7]:
+# In[6]:
 
 
 #K = 10
@@ -131,11 +131,12 @@ y_scaled
 
 # Export result to JSON
 
-# In[8]:
+# In[13]:
 
 import json
 
-print(json.dumps(y_scaled, ensure_ascii=False))
+print((y_scaled[0]))
+#print(json.dumps(y_scaled, ensure_ascii=False))
 
 
 # In[ ]:
