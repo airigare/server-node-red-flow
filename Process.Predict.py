@@ -5,7 +5,7 @@
 
 # ## Get and Prepare Weather Data from DataBase
 
-# In[1]:
+# In[73]:
 
 import pymysql.cursors
 import pandas as pd
@@ -28,7 +28,7 @@ connection.close()
 e_Log = (np.array(e_Log))
 
 
-# In[2]:
+# In[74]:
 
 from IPython.core.interactiveshell import InteractiveShell
 InteractiveShell.ast_node_interactivity = "all"
@@ -53,7 +53,7 @@ t_Log.tail()
 
 # ### Order Data and Calculate Means and Sums
 
-# In[3]:
+# In[75]:
 
 X = pd.DataFrame()
 
@@ -76,14 +76,14 @@ X = X.assign(sre000b0_sum=t_LogRolling.Sunshine.mean())
 X = X.assign(fu3010b0_mean=t_LogRolling.Wind.mean())
 X = X.assign(prestab0_mean=t_LogRolling.Pressure.mean())
 
-X = X.assign(log_sum = 0) #ToDo: Read Log and calculate the sum
+#X = X.assign(log_sum = 0) #ToDo: Read Log and calculate the sum
 
 X.transpose()
 
 
 # ### Prepare DataSet (Poly, Scale)
 
-# In[4]:
+# In[76]:
 
 from IPython.core.interactiveshell import InteractiveShell
 InteractiveShell.ast_node_interactivity = "all"
@@ -104,7 +104,7 @@ X = X_min_max_scaler.transform(X.reshape(1,-1))
 # - 1 - is medium
 # - 2 - device should stay off
 
-# In[5]:
+# In[77]:
 
 #if result == 1:
 #    model_reg = joblib.load('data/linreg_med_5deg.pkl')
@@ -122,7 +122,7 @@ y_scaled = y / y_min_max_scaler.scale_ + y_min_max_scaler.min_
 y_scaled
 
 
-# In[6]:
+# In[78]:
 
 
 #K = 10
@@ -131,7 +131,7 @@ y_scaled
 
 # Export result to JSON
 
-# In[13]:
+# In[79]:
 
 import json
 
