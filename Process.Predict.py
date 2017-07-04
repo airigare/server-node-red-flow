@@ -5,7 +5,7 @@
 
 # ## Get and Prepare Weather Data from DataBase
 
-# In[73]:
+# In[97]:
 
 import pymysql.cursors
 import pandas as pd
@@ -28,7 +28,7 @@ connection.close()
 e_Log = (np.array(e_Log))
 
 
-# In[74]:
+# In[98]:
 
 from IPython.core.interactiveshell import InteractiveShell
 InteractiveShell.ast_node_interactivity = "all"
@@ -53,7 +53,7 @@ t_Log.tail()
 
 # ### Order Data and Calculate Means and Sums
 
-# In[75]:
+# In[99]:
 
 X = pd.DataFrame()
 
@@ -83,14 +83,14 @@ X.transpose()
 
 # ### Prepare DataSet (Poly, Scale)
 
-# In[76]:
+# In[100]:
 
 from IPython.core.interactiveshell import InteractiveShell
 InteractiveShell.ast_node_interactivity = "all"
 
 from sklearn.preprocessing import PolynomialFeatures
 
-polyDegree = 2
+polyDegree = 3
 poly = PolynomialFeatures(degree=polyDegree)
 X = poly.fit_transform(X).astype(int)
 
@@ -104,7 +104,7 @@ X = X_min_max_scaler.transform(X.reshape(1,-1))
 # - 1 - is medium
 # - 2 - device should stay off
 
-# In[77]:
+# In[101]:
 
 #if result == 1:
 #    model_reg = joblib.load('data/linreg_med_5deg.pkl')
@@ -118,11 +118,11 @@ model = joblib.load('data/myLinReg.pkl')
 y = model.predict(X)
 
 y_min_max_scaler = joblib.load('data/y_min_max_scaler.pkl')
-y_scaled = y / y_min_max_scaler.scale_ + y_min_max_scaler.min_
+y_scaled = (y / y_min_max_scaler.scale_) + y_min_max_scaler.min_
 y_scaled
 
 
-# In[78]:
+# In[102]:
 
 
 #K = 10
@@ -131,7 +131,7 @@ y_scaled
 
 # Export result to JSON
 
-# In[79]:
+# In[103]:
 
 import json
 
