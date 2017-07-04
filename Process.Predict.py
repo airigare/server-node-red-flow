@@ -5,7 +5,7 @@
 
 # ## Get and Prepare Weather Data from DataBase
 
-# In[97]:
+# In[8]:
 
 import pymysql.cursors
 import pandas as pd
@@ -28,7 +28,7 @@ connection.close()
 e_Log = (np.array(e_Log))
 
 
-# In[98]:
+# In[9]:
 
 from IPython.core.interactiveshell import InteractiveShell
 InteractiveShell.ast_node_interactivity = "all"
@@ -53,7 +53,7 @@ t_Log.tail()
 
 # ### Order Data and Calculate Means and Sums
 
-# In[99]:
+# In[10]:
 
 X = pd.DataFrame()
 
@@ -83,7 +83,7 @@ X.transpose()
 
 # ### Prepare DataSet (Poly, Scale)
 
-# In[100]:
+# In[11]:
 
 from IPython.core.interactiveshell import InteractiveShell
 InteractiveShell.ast_node_interactivity = "all"
@@ -104,7 +104,7 @@ X = X_min_max_scaler.transform(X.reshape(1,-1))
 # - 1 - is medium
 # - 2 - device should stay off
 
-# In[101]:
+# In[12]:
 
 #if result == 1:
 #    model_reg = joblib.load('data/linreg_med_5deg.pkl')
@@ -122,7 +122,7 @@ y_scaled = (y / y_min_max_scaler.scale_) + y_min_max_scaler.min_
 y_scaled
 
 
-# In[102]:
+# In[13]:
 
 
 #K = 10
@@ -131,7 +131,7 @@ y_scaled
 
 # Export result to JSON
 
-# In[103]:
+# In[14]:
 
 import json
 
